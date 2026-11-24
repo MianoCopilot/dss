@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Nora",
+      "hasCanvas": false,
+      "bodyTextLen": 107,
+      "bodyTextHash": "1ceb8e8891b450fd01316fedc504efb66e70a37becc041021da95ac4628124c5",
+      "bodyTextPrefix": "Nora Spokój POKÓJ niebiesko-szary sweter Cicha Bliska Ostra Jest",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Nora",
+      "hasCanvas": false,
+      "bodyTextLen": 107,
+      "bodyTextHash": "1ceb8e8891b450fd01316fedc504efb66e70a37becc041021da95ac4628124c5",
+      "bodyTextPrefix": "Nora Spokój POKÓJ niebiesko-szary sweter Cicha Bliska Ostra Jest",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

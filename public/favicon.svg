@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Nora">
+  <rect width="32" height="32" rx="7" fill="#1f1a17"/>
+  <path fill="#f3efe8" d="M6.5 23.2V8h5.1l8.8 10.1V8H25.5v15.2h-5.1L11.6 13.1v10.1H6.5z"/>
+  <rect x="6.5" y="25" width="11" height="2.8" rx="1.4" fill="#b56a45"/>
+</svg>

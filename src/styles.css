@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Outfit", "Avenir Next", system-ui, sans-serif;
+  --color-paper: #f3efe8;
+  --color-ink: #1f1a17;
+  --color-muted: #7a736c;
+  --color-copper: #b56a45;
+  --color-slate: #5d7284;
+  --color-line: #e4ddd3;
+  --color-card: #fffcf8;
+  --color-oncopper: #fffaf6;
+  --radius-card: 1.25rem;
+}
+
+.dark-app {
+  --color-paper: #141210;
+  --color-ink: #f3efe8;
+  --color-muted: #a39890;
+  --color-line: #2c2724;
+  --color-card: #221e1b;
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+}
+
+.nora-shell {
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: minmax(16.5rem, 46dvh) minmax(0, 1fr);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  overflow: hidden;
+}
+
+@media (min-width: 960px) {
+  .nora-shell {
+    grid-template-columns: minmax(22rem, 30rem) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+  }
+}
+
+.nora-stage {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #1a1714;
+  min-height: 0;
+}
+
+.nora-layer {
+  position: absolute;
+  inset: -8%;
+  width: 116%;
+  height: 116%;
+  object-fit: cover;
+  object-position: center 16%;
+  transform: translate3d(calc(var(--px, 0) * 10px), calc(var(--py, 0) * 8px), 0);
+  will-change: transform;
+}
+
+.nora-layer-bg {
+  inset: -14%;
+  width: 128%;
+  height: 128%;
+  transform: translate3d(calc(var(--px, 0) * -12px), calc(var(--py, 0) * -8px), 0) scale(1.08);
+  filter: blur(10px) saturate(0.9);
+}
+
+.nora-layer-head {
+  transform: translate3d(calc(var(--px, 0) * 18px), calc(var(--py, 0) * 14px), 0);
+  clip-path: ellipse(34% 24% at 50% 22%);
+  filter: saturate(1.04);
+}
+
+.nora-breathe .nora-layer-body {
+  animation: nora-breath 4.6s ease-in-out infinite;
+}
+
+.nora-speak .nora-layer-head {
+  animation: nora-nod 0.95s ease-in-out infinite;
+}
+
+.nora-listen .nora-layer-head {
+  animation: nora-tilt 2.6s ease-in-out infinite;
+}
+
+.nora-dance .nora-layer-body,
+.nora-dance .nora-layer-head {
+  animation: nora-dance 0.55s ease-in-out infinite;
+}
+
+.nora-wash {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+}
+
+.wash-plaza { background: linear-gradient(180deg, rgba(196, 168, 120, 0.45), transparent 62%); }
+.wash-kawiarnia { background: linear-gradient(180deg, rgba(176, 120, 78, 0.35), transparent 60%); }
+.wash-miasto { background: linear-gradient(180deg, rgba(90, 104, 118, 0.4), transparent 62%); }
+.wash-las { background: linear-gradient(180deg, rgba(62, 86, 70, 0.42), transparent 64%); }
+.wash-kolacja { background: linear-gradient(180deg, rgba(120, 72, 48, 0.4), transparent 60%); }
+.wash-trening { background: linear-gradient(180deg, rgba(88, 96, 104, 0.35), transparent 60%); }
+.wash-deszcz { background: linear-gradient(180deg, rgba(70, 86, 102, 0.5), transparent 66%); }
+.wash-zima { background: linear-gradient(180deg, rgba(186, 198, 208, 0.42), transparent 60%); }
+.wash-pokoj { background: transparent; }
+
+.nora-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 45%, rgba(16, 12, 10, 0.38) 100%);
+}
+
+.nora-glow {
+  position: absolute;
+  inset: auto 8% 6% 8%;
+  height: 42%;
+  border-radius: 999px;
+  filter: blur(28px);
+  opacity: 0.72;
+  pointer-events: none;
+  transition: background 240ms ease;
+}
+
+.nora-blink {
+  position: absolute;
+  left: 39%;
+  top: 19.5%;
+  width: 22%;
+  height: 4.2%;
+  border-radius: 999px;
+  background: rgba(28, 18, 14, 0.82);
+  opacity: 0;
+  pointer-events: none;
+  animation: nora-blink 5.4s infinite;
+  filter: blur(0.6px);
+}
+
+.nora-stage-ui {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.9rem 1rem 1rem;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(16, 12, 10, 0.5) 0%,
+    transparent 30%,
+    transparent 62%,
+    rgba(16, 12, 10, 0.62) 100%
+  );
+}
+
+.nora-stage-ui > * {
+  pointer-events: auto;
+}
+
+.nora-sheet {
+  position: fixed;
+  z-index: 30;
+  inset: auto 0 0 0;
+  max-height: 86dvh;
+  overflow: auto;
+  background: var(--color-card);
+  color: var(--color-ink);
+  border-top: 1px solid var(--color-line);
+  border-radius: 1.25rem 1.25rem 0 0;
+  padding: 1rem 1rem 1.5rem;
+  box-shadow: 0 -16px 40px rgba(20, 16, 12, 0.18);
+}
+
+@media (min-width: 960px) {
+  .nora-sheet {
+    left: auto;
+    top: 0;
+    width: 26rem;
+    max-height: none;
+    height: 100dvh;
+    border-radius: 0;
+    border-top: 0;
+    border-left: 1px solid var(--color-line);
+  }
+}
+
+@keyframes nora-breath {
+  0%, 100% { transform: translate3d(calc(var(--px, 0) * 10px), calc(var(--py, 0) * 8px), 0) scale(1); }
+  50% { transform: translate3d(calc(var(--px, 0) * 10px), calc(var(--py, 0) * 8px - 3px), 0) scale(1.012); }
+}
+
+@keyframes nora-nod {
+  0%, 100% { transform: translate3d(calc(var(--px, 0) * 18px), calc(var(--py, 0) * 14px), 0) rotate(0deg); }
+  50% { transform: translate3d(calc(var(--px, 0) * 18px), calc(var(--py, 0) * 14px + 7px), 0) rotate(1.4deg); }
+}
+
+@keyframes nora-tilt {
+  0%, 100% { transform: translate3d(calc(var(--px, 0) * 18px), calc(var(--py, 0) * 14px), 0) rotate(-2deg); }
+  50% { transform: translate3d(calc(var(--px, 0) * 18px + 4px), calc(var(--py, 0) * 14px), 0) rotate(6deg); }
+}
+
+@keyframes nora-dance {
+  0%, 100% { transform: translate3d(calc(var(--px, 0) * 8px - 8px), 0, 0) rotate(-2deg); }
+  50% { transform: translate3d(calc(var(--px, 0) * 8px + 8px), -6px, 0) rotate(2deg); }
+}
+
+@keyframes nora-blink {
+  0%, 46%, 52%, 100% { opacity: 0; transform: scaleY(0.15); }
+  48%, 50% { opacity: 0.9; transform: scaleY(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nora-breathe .nora-layer-body,
+  .nora-speak .nora-layer-head,
+  .nora-listen .nora-layer-head,
+  .nora-dance .nora-layer-body,
+  .nora-dance .nora-layer-head,
+  .nora-blink {
+    animation: none;
+  }
+}
