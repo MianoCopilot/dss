@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Nora</string>
+    <string name="url_hint">Adres opublikowanej Nory, np. https://twoja-nora.vercel.app</string>
+    <string name="open">Otwórz</string>
+    <string name="change">Zmień adres</string>
+    <string name="intro">Nora na Androidzie. Wklej adres opublikowanej aplikacji z Grok App Builder albo Vercel.</string>
+</resources>
